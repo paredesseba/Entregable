@@ -2,15 +2,15 @@ package com.company;
 
 public abstract class Profesor {
 
+    private static final Integer ANTIGUEDAD = 0;
+
     private String nombre;
     private String apellido;
-    private Integer antiguedad;
     private Integer codigoDeProfesor;
 
-    public Profesor(String nombre, String apellido, Integer antiguedad, Integer codigoDeProfesor) {
+    public Profesor(String nombre, String apellido, Integer codigoDeProfesor) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.antiguedad = antiguedad;
         this.codigoDeProfesor = codigoDeProfesor;
     }
 
@@ -20,10 +20,6 @@ public abstract class Profesor {
 
     public String getApellido() {
         return apellido;
-    }
-
-    public Integer getAntiguedad() {
-        return antiguedad;
     }
 
     public Integer getCodigoDeProfesor() {

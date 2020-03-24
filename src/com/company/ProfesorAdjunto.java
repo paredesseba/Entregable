@@ -2,15 +2,15 @@ package com.company;
 
 public class ProfesorAdjunto extends Profesor {
 
-    private Integer cantidadHorasConsulta;
+    private Integer cantidadDeHoras;
 
 
-    public ProfesorAdjunto(String nombre, String apellido, Integer antiguedad, Integer codigoDeProfesor, Integer cantidadHorasConsulta) {
-        super(nombre, apellido, antiguedad, codigoDeProfesor);
-        this.cantidadHorasConsulta = cantidadHorasConsulta;
+    public ProfesorAdjunto(String nombre, String apellido, Integer codigoDeProfesor, Integer cantidadHorasConsulta) {
+        super(nombre, apellido, codigoDeProfesor);
+        this.cantidadDeHoras = cantidadHorasConsulta;
     }
 
-    public Integer getCantidadHorasConsulta() {
-        return cantidadHorasConsulta;
+    public Integer getCantidadDeHoras() {
+        return cantidadDeHoras;
     }
 }

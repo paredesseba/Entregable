@@ -4,9 +4,9 @@ public class Alumno {
 
     private String nombre;
     private String apellido;
-    private String codigoDeAlumno;
+    private Integer codigoDeAlumno;
 
-    public Alumno(String nombre, String apellido, String codigoDeAlumno) {
+    public Alumno(String nombre, String apellido, Integer codigoDeAlumno) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.codigoDeAlumno = codigoDeAlumno;
@@ -20,7 +20,7 @@ public class Alumno {
         return apellido;
     }
 
-    public String getCodigoDeAlumno() {
+    public Integer getCodigoDeAlumno() {
         return codigoDeAlumno;
     }
 

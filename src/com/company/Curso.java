@@ -11,11 +11,11 @@ public class Curso {
     private Integer cupoMaximoDeAlumnos;
     private List<Alumno> listaDeAlumnos;
 
-    public Curso(String nombre, Integer codigoDeCurso, ProfesorTitular profesorTitular, ProfesorAdjunto profesorAdjunto, Integer cupoMaximoDeAlumnos) {
+    public Curso(String nombre, Integer codigoDeCurso, Integer cupoMaximoDeAlumnos) {
         this.nombre = nombre;
         this.codigoDeCurso = codigoDeCurso;
-        this.profesorTitular = profesorTitular;
-        this.profesorAdjunto = profesorAdjunto;
+        this.profesorTitular = null;
+        this.profesorAdjunto = null;
         this.cupoMaximoDeAlumnos = cupoMaximoDeAlumnos;
         this.listaDeAlumnos = new ArrayList<Alumno>();
     }
@@ -34,6 +34,14 @@ public class Curso {
 
     public ProfesorAdjunto getProfesorAdjunto() {
         return profesorAdjunto;
+    }
+
+    public void setProfesorTitular(ProfesorTitular profesorTitular) {
+        this.profesorTitular = profesorTitular;
+    }
+
+    public void setProfesorAdjunto(ProfesorAdjunto profesorAdjunto) {
+        this.profesorAdjunto = profesorAdjunto;
     }
 
     public Integer getCupoMaximoDeAlumnos() {
