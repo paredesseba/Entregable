@@ -53,4 +53,26 @@ public class Curso {
         Curso cursoAComparar = (Curso) o;
         return  (cursoAComparar.getCodigoDeCurso().equals(this.codigoDeCurso));
     }
+
+    public Boolean hayCupo() {
+        return this.cupoMaximoDeAlumnos > this.listaDeAlumnos.size();
+    }
+
+    public Boolean agregarUnAlumno(Alumno unAlumno){
+        if (hayCupo()){
+            this.listaDeAlumnos.add(unAlumno);
+            System.out.println("Alumno agregado.");
+            return true;
+        }
+        else {
+            System.out.println("No hay cupo.");
+            return false;
+        }
+    }
+
+    public void eliminarAlumno(Alumno unAlumno){
+        this.listaDeAlumnos.remove(unAlumno);
+        System.out.println("Alumno eliminado.");
+    }
+
 }
