@@ -31,6 +31,9 @@ public class Main {
 
         manager.bajaCurso(20001);
 
+        //PARTE K : A la clase Alumno habria que agregarle un atributo de tipo lista, que contenga los cursos
+        //a los cuales esta inscripto el Alumno. Por ejemplo:
+        // private List <Curso> cursosInscripto;
 
 
     }
