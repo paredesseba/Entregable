@@ -35,8 +35,6 @@ public class Main {
         //a los cuales esta inscripto el Alumno. Por ejemplo:
         // private List <Curso> cursosInscripto;
 
-        LectorDeArchivosCSV lector = new LectorDeArchivosCSV();
-
         manager.inscribirAlumnosEnAndroid();
 
     }
