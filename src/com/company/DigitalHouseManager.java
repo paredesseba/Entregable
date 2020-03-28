@@ -9,12 +9,14 @@ public class DigitalHouseManager {
     private List<Profesor> listaDeProfesores;
     private List<Curso> listaDeCursos;
     private List<Inscripcion> listaDeInscripciones;
+    private LectorDeArchivosCSV lectorDeArchivosCSV;
 
     public DigitalHouseManager() {
         this.listaDeInscripciones = new ArrayList<>();
         this.listaDeAlumnos = new ArrayList<>();
         this.listaDeProfesores = new ArrayList<>();
         this.listaDeCursos = new ArrayList<>();
+        this.lectorDeArchivosCSV = new LectorDeArchivosCSV();
     }
 
     public void altaCurso(String nombre, Integer codigoCurso, Integer cupoMaximoDealumnos){
@@ -65,7 +67,7 @@ public class DigitalHouseManager {
 
     public void bajaProfesor(Integer codigoProfesor){
         Profesor profesorAEliminar = buscarProfesor(codigoProfesor);
-        listaDeProfesores.remove(codigoProfesor);
+        listaDeProfesores.remove(profesorAEliminar);
         System.out.println("Profesor dado de baja.");
     }
 
@@ -92,6 +94,7 @@ public class DigitalHouseManager {
         if (cursoABuscar.hayCupo()){
             cursoABuscar.agregarUnAlumno(alumnoABuscar);
             Inscripcion unaInscripcion = new Inscripcion(alumnoABuscar,cursoABuscar);
+            listaDeInscripciones.add(unaInscripcion);
             System.out.println("Inscripcion exitosa.");
         }
         else {
@@ -105,6 +108,16 @@ public class DigitalHouseManager {
         Curso cursoABuscar = buscarCurso(codigoCurso);
         cursoABuscar.setProfesorTitular(titularABuscar);
         cursoABuscar.setProfesorAdjunto(adjuntoABuscar);
+    }
+
+    public void inscribirAlumnosEnAndroid (){
+        final Integer NUMERO_CURSO_ANDROID = 20002;
+        List<Alumno> alumnosAInscribir = lectorDeArchivosCSV.leerCSV();
+        for (int i = 0; i < alumnosAInscribir.size(); i++) {
+            Alumno unAlumno = alumnosAInscribir.get(i);
+            altaAlumno(unAlumno.getNombre(),unAlumno.getApellido(),unAlumno.getCodigoDeAlumno());
+            inscribirAlumno(unAlumno.getCodigoDeAlumno(),NUMERO_CURSO_ANDROID);
+        }
     }
 
 }
