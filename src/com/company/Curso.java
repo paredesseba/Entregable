@@ -1,7 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Curso {
     private String nombre;
@@ -27,6 +26,11 @@ public class Curso {
     public Integer getCodigoDeCurso() {
         return codigoDeCurso;
     }
+
+    public List<Alumno> getListaDeAlumnos() {
+        return listaDeAlumnos;
+    }
+
 
     public ProfesorTitular getProfesorTitular(){
         return profesorTitular;

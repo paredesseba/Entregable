@@ -11,6 +11,7 @@ public class DigitalHouseManager {
     private List<Inscripcion> listaDeInscripciones;
     private LectorDeArchivosCSV lectorDeArchivosCSV;
 
+
     public DigitalHouseManager() {
         this.listaDeInscripciones = new ArrayList<>();
         this.listaDeAlumnos = new ArrayList<>();
@@ -119,5 +120,8 @@ public class DigitalHouseManager {
             inscribirAlumno(unAlumno.getCodigoDeAlumno(),NUMERO_CURSO_ANDROID);
         }
     }
+
+
+
 
 }

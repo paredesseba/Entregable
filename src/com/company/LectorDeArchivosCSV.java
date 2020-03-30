@@ -32,13 +32,11 @@ public class LectorDeArchivosCSV {
 
             while ((linea = br.readLine()) != null) {
                 String [] datosDeLinea = linea.split(",");
-
-                //estos datos los guardo en un ArrayList temporal, que representa una linea, osea un alumno
+                //estos datos los guardo en un ArrayList que representa una linea, osea un alumno
                 ArrayList<String> datosAlumno = new ArrayList<>();
                 for (String dato : datosDeLinea) {
                     datosAlumno.add(dato);
                 }
-
                 //agrego el alumno al arraylist de arraylist string
                 datosAlumnos.add(datosAlumno);
             }
